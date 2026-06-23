@@ -68,9 +68,9 @@ st.set_page_config(page_title="PreSense AI", page_icon="🤱",
 
 @st.cache_resource
 def load_assets():
-    lr  = joblib.load(os.path.join(MODELS_DIR, "lr_model.pkl"))
-    rf  = joblib.load(os.path.join(MODELS_DIR, "rf_model.pkl"))
-    xgb = joblib.load(os.path.join(MODELS_DIR, "xgb_model.pkl"))
+    lr  = joblib.load(os.path.join(BASE_DIR, "lr_model.pkl"))
+    rf  = joblib.load(os.path.join(BASE_DIR, "rf_model.pkl"))
+    xgb = joblib.load(os.path.join(BASE_DIR, "xgb_model.pkl"))
     with open(os.path.join(BASE_DIR, "model_info.json")) as f:
         info = json.load(f)
     return lr, rf, xgb, info
