@@ -68,9 +68,9 @@ st.set_page_config(page_title="PreSense AI", page_icon="🤱",
 
 @st.cache_resource
 def load_assets():
-    lr  = joblib.load(os.path.join(BASE_DIR, "lr_model.pkl"))
-    rf  = joblib.load(os.path.join(BASE_DIR, "rf_model.pkl"))
-    xgb = joblib.load(os.path.join(BASE_DIR, "xgb_model.pkl"))
+    lr  = joblib.load(os.path.join(MODELS_DIR, "lr_model.pkl"))
+    rf  = joblib.load(os.path.join(MODELS_DIR, "rf_model.pkl"))
+    xgb = joblib.load(os.path.join(MODELS_DIR, "xgb_model.pkl"))
     with open(os.path.join(BASE_DIR, "model_info.json")) as f:
         info = json.load(f)
     return lr, rf, xgb, info
@@ -725,7 +725,7 @@ def make_sidebar(active):
     <div class="logo-icon">{BRAIN_LOGO}</div>
     <div class="logo-text">
       <div class="ln">PreSense AI</div>
-      <div class="ls">Early Preeclampsia<br>Prediction System</div>
+      <div class="ls">Early Prediction of<br>Preeclampsia</div>
     </div>
   </div>
   <div class="nav-label">Navigation</div>
@@ -804,7 +804,7 @@ if cur == "home":
     <img src="https://api.iconify.design/fluent/shield-checkmark-24-filled.svg?color=%231847b5"/>
     Evidence-Based &nbsp;•&nbsp; Clinically Validated
   </div>
-  <div class="hero-title">AI-Powered Early<br>Preeclampsia<br>Prediction</div>
+  <div class="hero-title">AI-Powered<br>Early Prediction of<br>Preeclampsia</div>
   <p class="hero-desc">Advanced machine learning using proteomic biomarkers and clinical data to identify high-risk pregnancies early and support better maternal outcomes.</p>
   <div class="btn-row">
    <button class="btn-p" onclick="nav('patient')">
@@ -843,7 +843,7 @@ if cur == "home":
  <div class="feat-card fc-pink"><div class="feat-icon fi-pink"><img src="https://api.iconify.design/fluent/heart-pulse-24-filled.svg?color=%23db2777"/></div><div><div class="feat-title">Better Outcomes</div><div class="feat-desc">Early identification enables timely intervention and <strong style="color:#db2777">improved maternal health</strong>.</div></div></div>
 </div>
 """
-    page_shell("home", "PreSense AI", "Early Preeclampsia Prediction System",
+    page_shell("home", "PreSense AI", "Early Prediction of Preeclampsia",
         """<div class="tb-badge"><span class="dot"></span>System Ready</div>""",
         body, h=780)
 # ════════════════════════════════════
